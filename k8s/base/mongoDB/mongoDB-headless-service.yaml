@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: mongodb
+  labels:
+    app: mongo-db
+spec:
+  clusterIP: None
+  selector:
+    app: mongo-db
+  ports:
+  - protocol: TCP
+    port: 27017
+    targetPort: 27017
+#connection :mongodb://mongo-0.mongodb,mongo-1.mongodb,mongo-2.mongodb:27017/dbname
